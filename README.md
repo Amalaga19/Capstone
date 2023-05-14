@@ -4,6 +4,8 @@
 
   This is a Wi-Fi access point that can be assembled and activated using open-source components and software. It runs on a Raspberry Pi 3B+ and is housed inside a 3-D printed casing, of which the design was modified to suit the functions of this device, and can be powered by a portable battery or any power source that can reliably provide a current of at least 2 Amperes. It also uses an SSD 1306 OLED display that can be programmed to display different kinds of messages and information from the device, and a USB Wi-Fi dongle in place of the built-in antenna. This device is connected to a network through an Ethernet cable and emits Wi-Fi through either its built-in antenna or the plugged-in dongle. Once this is assembled, further improvements can be made, such as adding more devices as repeaters or implementing a mesh network.
 
+
+
 ## Why I am doing this
 
   I am from Lima, Peru’s capital and largest city. Although in Lima internet connection and access is available and fairly priced, it is not the case in rural and remote areas like the highlands or rainforest regions. In these places, internet service providers (ISPs) have failed to provide a reliable and inexpensive connection, widening the digital divide. The digital divide is the unequal access to technology and connectivity between demographics or different groups of people, which in the case of Peru is evident and exacerbated by the unreliable internet infrastructure in remote areas. Since the “traditional” ISPs’ methods to bring internet connectivity have failed to provide a reliable and cost-effective service, other solutions are needed. In other countries in the Global South such as Thailand and South Africa community-led initiatives have been carried out to provide connectivity to their own communities. These initiatives are cost-effective, easy to install and maintain, sustainable, scalable and replicable, and while they often respond to a deficient internet infrastructure, the currently existent (deficient) infrastructure is sometimes leveraged as part of the initiative. In the case of Peru, the Ministry of Transport and Communications launched the “Conecta Selva” (Connect the Rainforest) program in 2021 with the aim of installing satellite internet connectivity in schools and hospitals in rural communities in the Peruvian Rainforest.
@@ -28,12 +30,13 @@
 
 ## Setting up the Raspberry Pi
 1. Download and install the [Raspberry Pi imager](https://www.raspberrypi.com/software/)
-2. Insert a MicroSD card into a USB adapter and connect it to your computer.
+2. Insert a card into a USB adapter and connect it to your computer.
 3. Select “Raspberry Pi OS (32-Bit)” after clicking the “Choose OS” button and select the MicroSD after clicking the “Choose Storage” button.
 4. Click on the settings button (it looks like a cog). Check the “Set Hostname” box and change the hostname, which is like the name of the device, and check “Enable SSH”, keep the “use password authentication” option checked and change the username and password. Take note of the hostname, username and password, and click the “Save” button.
 5. Click the “Write” button. Do not remove the MicroSD card from the computer until the imager shows a pop-up message that it is safe to do so.
 6. Insert the MicroSD card into the bottom of the Raspberry Pi board, connect an ethernet cable to its ethernet port and connect it to power using its MicroUSB port.
-7. Open a command prompt in your computer and make sure it is connected to the same network as the Raspberry Pi. I used Windows Powershell. Enter the following command and press enter, replacing the hostname and username placeholders with the ones you set when installing the OS to the MicroSD card:
+![SD Card and Raspberry Pi](https://github.com/Amalaga19/Capstone/blob/main/IMG_5552.JPEG?raw=true "SD Card with a RPi")
+8. Open a command prompt in your computer and make sure it is connected to the same network as the Raspberry Pi. I used Windows Powershell. Enter the following command and press enter, replacing the hostname and username placeholders with the ones you set when installing the OS to the MicroSD card:
 ```bash
 ssh user@hostname.local 
 ```
@@ -191,15 +194,21 @@ find / -name "filename"
 2. Use the recommended settings and click “Slice”. I like to have more infill than the recommended, but using the recommended settings will suffice.
 3. Export the sliced file to a storage device and plug it into the 3-D printer. Follow the instructions on the 3-D printer’s screen.
 4. Once the printing process is complete, remove the product carefully from its tray and remove the supports. Usually these will be fragile enough to use your hands, but sometimes a set of pliers may be needed.
+![A picture of the case before being assembled](https://github.com/Amalaga19/Capstone/blob/main/IMG_5545.JPEG?raw=true "Case before assembly")
 
 ## Assembling the device
 1. Place the Raspberry Pi board without the MicroSD card on the bottom part of the casing and place the MicroSD card in the Raspberry Pi through the slot found in the case.
 2. Connect the OLED display and align two screw holes on the display with two of the small, round holes in the casing’s top part.
 3. Secure the OLED display to the casing. I tied them together, but it can be done with screws or other methods. Be creative if it does not work with screws.
 4. Align the top and bottom parts of the case like so and snap them together. Push gently into the “stubborn” areas that are not snapped together yet.
-5. Connect an ethernet cable between the router and the ethernet port.
-6. If using one, connect the wi-fi dongle to any of the Raspberry Pi’s four USB ports.
-7. If using a power bank or portable battery, place it on the hooks and connect its cable to the Raspberry Pi’s MicroUSB port.
+![Case render](https://github.com/Amalaga19/Capstone/blob/main/Render%205.jpg?raw=true "Case render")
+![Case assembly](https://github.com/Amalaga19/Capstone/blob/main/Render%207.jpg?raw=true "Assembly render")
+![Assembled Render](https://github.com/Amalaga19/Capstone/blob/main/Render%208.jpg?raw=true "Assembled render")
+![Assembled device](https://github.com/Amalaga19/Capstone/blob/main/IMG_5557.JPEG?raw=true "Assembled device")
+6. Connect an ethernet cable between the router and the ethernet port.
+7. If using one, connect the wi-fi dongle to any of the Raspberry Pi’s four USB ports.
+8. If using a power bank or portable battery, place it on the hooks and connect its cable to the Raspberry Pi’s MicroUSB port.
+![Looks like this](https://github.com/Amalaga19/Capstone/blob/main/IMG_5564.JPEG?raw=true "Device with battery")
   After finishing this last step, you should have a functioning access point.
   
 ## Use Case and Further Improvements: Materials and Mesh Network

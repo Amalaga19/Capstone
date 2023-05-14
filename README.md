@@ -15,6 +15,8 @@
 # Instructions
 
 ## Equipement needed
+![A picture of the equipement laid out on a table](https://github.com/Amalaga19/Capstone/blob/main/IMG_5542.JPEG?raw=true "Equipement")
+
 - A Raspberry Pi board (3B+ or newer)
 - An SSD 1306 OLED display like [this one](https://www.amazon.com/dp/B085WCRS7C?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 - Female-to-female jumper cables

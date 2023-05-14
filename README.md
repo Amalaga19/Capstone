@@ -118,7 +118,7 @@ oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c, reset=reset_pin)
 ```bash
 nano filename.py
 ```
-This will open the nano text editor. There are several example codes in the Adafruit website and around the internet that can make the OLED display show different kinds of information. In this case, the code will alternate between showing the network’s name and password every five seconds. Enter the following code:
+This will open the nano text editor. There are several example codes in the Adafruit website and around the internet that can make the OLED display show different kinds of information. In this case, the code will alternate between showing the network’s name and password every five seconds. If you want to do this, enter the following code:
 ```python
 import board
 import digitalio
@@ -159,12 +159,12 @@ def display_text(text):
 
 while True:
     # First alternating message
-    display_text("Your first message goes here")
-    time.sleep(5)  # Display the message for 5 seconds
+    display_text("SSID: The name of your network goes here")
+    time.sleep(5)  # Display the SSID for 5 seconds
 
     # Second alternating message
-    display_text("Your second message goes here!")
-    time.sleep(5)  # Display the message for 5 seconds
+    display_text("Password: Password goes here")
+    time.sleep(5)  # Display the Password for 5 seconds
 ```
   Press ctrl+x, y and then enter to save and close the file.
 6. Enter “Python” followed by a space and the filename of the file that was just closed. If the display was connected properly, then information should be shown on the display.

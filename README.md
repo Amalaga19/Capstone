@@ -188,7 +188,7 @@ find / -name "filename"
 ```
   This will show the path to the file.
 8. Reboot the Raspberry Pi. Once it turns on it should automatically show the information on the display.
-## The case:
+## The case
   The STL file for the case can be downloaded [here](https://drive.google.com/file/d/1H-IyX1jAiXuQxYSuHUFYoUYDQk-Jr2FN/view?usp=sharing). It is a modified version of [this model](https://thangs.com/designer/MVLPGaming/3d-model/Customizable-Raspberry-Pi-3B-case-screwless-21595). If you have access to a 3-D printer use the relevant slicing software, if you are using a 3-D printing service contact them to follow their procedures. Regardless, download the file for the case so it can be printed or modified. The following instructions are only relevant for those who will be printing their own cases.
 
 1. Open your 3-D printer’s slicing software. In this case I used Ultimaker Cura and printed on an Ultimaker 3.

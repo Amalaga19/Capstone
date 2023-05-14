@@ -4,7 +4,7 @@
 
   This is a Wi-Fi access point that can be assembled and activated using open-source components and software. It runs on a Raspberry Pi 3B+ and is housed inside a 3-D printed casing, of which the design was modified to suit the functions of this device, and can be powered by a portable battery or any power source that can reliably provide a current of at least 2 Amperes. It also uses an SSD 1306 OLED display that can be programmed to display different kinds of messages and information from the device, and a USB Wi-Fi dongle in place of the built-in antenna. This device is connected to a network through an Ethernet cable and emits Wi-Fi through either its built-in antenna or the plugged-in dongle. Once this is assembled, further improvements can be made, such as adding more devices as repeaters or implementing a mesh network.
 
-
+![Final Device](https://github.com/Amalaga19/Capstone/blob/main/IMG_5575.JPEG?raw=true "Device Photo")
 
 ## Why I am doing this
 

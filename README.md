@@ -6,7 +6,7 @@
 
 ## Why this project:
 
-  I am from Lima, Peru’s capital and largest city. Although in Lima internet connection and access is available and fairly priced, it is not the case in rural and remote areas like the highlands or rainforest regions. In these places, internet service providers (ISPs) have failed to provide a reliable and inexpensive connection, widening the digital divide. The digital divide is the unequal access to technology and connectivity between demographics or different groups of people, which in the case of Peru is evident and exacerbated by the unreliable internet infrastructure in remote areas. Since the “traditional” ISPs’ methods to bring internet connectivity have failed to provide a reliable and cost-effective service, other solutions are needed. In other countries in the Global South such as Thailand and South Africa community-led initiatives have been carried out to provide connectivity to their own communities. These initiatives are cost-effective, easy to install and maintain, sustainable, scalable and replicable, and while they often respond to a deficient internet infrastructure, the currently existent (deficient) infrastructure is sometimes leveraged as part of the initiative. In the case of Peru, the Ministry of Transport and Communications launched the “Conecta Selva” (Connect [the] Rainforest) program in 2021 with the aim of installing satellite internet connectivity in schools and hospitals in rural communities in the Peruvian Rainforest.
+  I am from Lima, Peru’s capital and largest city. Although in Lima internet connection and access is available and fairly priced, it is not the case in rural and remote areas like the highlands or rainforest regions. In these places, internet service providers (ISPs) have failed to provide a reliable and inexpensive connection, widening the digital divide. The digital divide is the unequal access to technology and connectivity between demographics or different groups of people, which in the case of Peru is evident and exacerbated by the unreliable internet infrastructure in remote areas. Since the “traditional” ISPs’ methods to bring internet connectivity have failed to provide a reliable and cost-effective service, other solutions are needed. In other countries in the Global South such as Thailand and South Africa community-led initiatives have been carried out to provide connectivity to their own communities. These initiatives are cost-effective, easy to install and maintain, sustainable, scalable and replicable, and while they often respond to a deficient internet infrastructure, the currently existent (deficient) infrastructure is sometimes leveraged as part of the initiative. In the case of Peru, the Ministry of Transport and Communications launched the “Conecta Selva” (Connect the Rainforest) program in 2021 with the aim of installing satellite internet connectivity in schools and hospitals in rural communities in the Peruvian Rainforest.
 
 ## Cost-Effectiveness and Open Source: Why Raspberry Pi?
 
@@ -25,7 +25,7 @@
 - A 3-D printer and PLA filament (or access to a 3-D printing service)
 
 ## Setting up the Raspberry Pi:
-1. Download and install the Raspberry Pi imager (link goes here)
+1. Download and install the [Raspberry Pi imager](https://www.raspberrypi.com/software/)
 2. Insert a MicroSD card into a USB adapter and connect it to your computer.
 3. Select “Raspberry Pi OS (32-Bit)” after clicking the “Choose OS” button and select the MicroSD after clicking the “Choose Storage” button.
 4. Click on the settings button (it looks like a cog). Check the “Set Hostname” box and change the hostname, which is like the name of the device, and check “Enable SSH”, keep the “use password authentication” option checked and change the username and password. Take note of the hostname, username and password, and click the “Save” button.
@@ -77,14 +77,14 @@ sudo shutdown -r now
 This will reboot the Raspberry Pi. After waiting 1-2 minutes, repeat steps 7 and 8.
 For the next part, an HDMI cable connected to a screen, a keyboard and a mouse are required. If this equipment is not available, this tutorial (link) may be followed to set the access point up from your computer. If you are using a wi-fi dongle, enter the command “ifconfig” and press enter, the dongle should show up as “WLAN1”, “WLAN0” is the Raspberry Pi’s built-in antenna. On any step that has a “WLAN0” in the code or as a file name, replace it with “WLAN1” to use the dongle’s antenna.
 ## Setting up the access point:
-This section is adapted from this tutorial (link goes here) found in Tom’s Hardware
+This section is adapted from this [tutorial](https://www.tomshardware.com/how-to/raspberry-pi-access-point) found in Tom’s Hardware
 1. Click on the network icon, it looks like two blue arrows: one pointing upwards and one pointing downwards. Click on advanced options -> Create Wireless Hotspot. If using a dongle, the option to do so using “WLAN1” should appear.
 2. Name the network and set up a password by changing the security to WPA & WPA2 Personal and click create. Open a command line and enter “sudo shutdown -r now” to reboot the Raspberry Pi.
 3. Click the network icon ->Advanced Options -> Edit connections. Select the name of your access point’s network and click the cog icon on the bottom right corner of the window. Open the “General” tab, check the box next to the option “Connect with priority” and set the number to 0. Click “save” and reboot the Raspberry Pi again.
 4. Use your phone or another device and attempt to connect to your Raspberry Pi’s network. If the connection is successful, this second device should be able to access the internet. 
 
 ## Programming the OLED display
-This project used an SSD1306 OLED display. Adafruit provides this guide (link) to set up OLED displays which includes how to connect the different types of displays available in the market to the board. NOTE: The case model is designed for a 0.96" 128x64 OLED display and using other models of a different size will require modifying the case model.
+This project used an SSD1306 OLED display. Adafruit provides this [guide](cdn-learn.adafruit.com/downloads/pdf/monochrome-oled-breakouts.pdf) to set up OLED displays which includes how to connect the different types of displays available in the market to the board. NOTE: The case model is designed for a 0.96" 128x64 OLED display and using other models of a different size will require modifying the case model.
 
 1. Connect the female-to-female jumper cables according to Adafruit’s instructions.
 2. Connect your computer to the Raspberry Pi by opening a powershell window and repeating steps 7 and 8 of the setup instructions or open a command prompt from the Raspberry Pi if it is connected to a screen and has a keyboard and mouse.
@@ -183,7 +183,7 @@ find / -name "filename"
   This will show the path to the file.
 8. Reboot the Raspberry Pi. Once it turns on it should automatically show the information on the display.
 ## The case:
-  The STL file for the case can be downloaded [here](link). It is a modified version of this [model](link). If you have access to a 3-D printer use the relevant slicing software, if you are using a 3-D printing service contact them to follow their procedures. Regardless, download the file for the case so it can be printed or modified. The following instructions are only relevant for those who will be printing their own cases.
+  The STL file for the case can be downloaded [here](https://drive.google.com/file/d/1H-IyX1jAiXuQxYSuHUFYoUYDQk-Jr2FN/view?usp=sharing). It is a modified version of [this model](https://thangs.com/designer/MVLPGaming/3d-model/Customizable-Raspberry-Pi-3B-case-screwless-21595). If you have access to a 3-D printer use the relevant slicing software, if you are using a 3-D printing service contact them to follow their procedures. Regardless, download the file for the case so it can be printed or modified. The following instructions are only relevant for those who will be printing their own cases.
 
 1. Open your 3-D printer’s slicing software. In this case I used Ultimaker Cura and printed on an Ultimaker 3.
 2. Use the recommended settings and click “Slice”. I like to have more infill than the recommended, but using the recommended settings will suffice.
@@ -198,3 +198,23 @@ find / -name "filename"
 5. Connect an ethernet cable between the router and the ethernet port.
 6. If using one, connect the wi-fi dongle to any of the Raspberry Pi’s four USB ports.
 7. If using a power bank or portable battery, place it on the hooks and connect its cable to the Raspberry Pi’s MicroUSB port.
+  After finishing this last step, you should have a functioning access point.
+  
+## Use Case and Further Improvements: Materials and Mesh Network
+
+As was mentioned earlier, this project’s ultimate goal is to be a realistic solution to the widening of the digital divide in rural and remote areas. As such, this project was designed with communities in the Peruvian rainforest in mind. In 2021, many of these had their schools or medical centers connected to satellite internet through the “Conecta Selva” program. This device would be connected to the building’s antenna and powered by a battery which would ideally be charged using solar energy to reduce power costs. Since it would be installed outdoors, using PLA for the case is not ideal, and a material like ABS may be more suited for the device after some post-processing to ensure it can withstand the rain and high temperatures of the area. 
+
+With the device on the school’s roof or window, several buildings nearby will now be in reach of the wi-fi signal, and by placing similar devices on their roofs or windows would be able to extend the range of the signal. However, a “traditional” access point with repeaters will lead to connection speed and signal intensity being lost with the repeaters, as it will function as several wi-fi networks instead of a single one. The solution for this is to implement a mesh network with these devices. A mesh network will make all devices behave like a single network instead of multiple with the same name, with each of these devices being a “node”. The main node (gateway) will be the one that is connected to the internet, and all the other devices will be bridge nodes. This will result in a scalable network that has already been proven to work in Thailand, for example, where the Taknet network consists of one gateway node in a public building connected to the local ISP’s antenna and several routers acting as bridges in households throughout the town the network was installed in. This network has been replicated in several towns in Thailand with networks of different sizes, showing this solution can be replicated and scaled. Since this device already works as an access point, no hardware changes area required to program a mesh protocol into the device. This protocol would be BATMAN-Adv, which is already used in other community-owned networks like Freifunk in Germany. With a mesh network, perhaps the OLED displays could be programmed to display information like the other nodes that each device is connected to instead of just cycling through the SSID and password.
+
+Since this device is using open-source technology, I believe that the user and maker community will be able to improve this device’s case and software to bring it closer to reaching its ultimate goal.
+
+## Sources:
+- Espinoza, David, and David Reed. “Wireless Technologies and Policies for Connecting Rural Areas in Emerging Countries: A Case Study in Rural Peru.” Digital Policy, Regulation and Governance, vol. 20, no. 5, 2018, pp. 479–511., [Link](https://doi.org/10.1108/dprg-03-2018-0009).
+- Fried, Limor (listed as “Lady Ada”). “Monochrome OLED Breakouts - Adafruit Industries.” Adafruit, 29 Jan. 2023, [Link](cdn-learn.adafruit.com/downloads/pdf/monochrome-oled-breakouts.pdf).
+- Innes, Brian. “Create a Mesh Network over WiFi Using Raspberry Pi.” GitHub, 29 Nov. 2021, [Link](https://github.com/binnes/WiFiMeshRaspberryPi/blob/master/README.md).
+- Hymel, Shawn. “Setting up a Raspberry Pi 3 as an Access Point.” SparkFun Learn, [Link](https://learn.sparkfun.com/tutorials/setting-up-a-raspberry-pi-3-as-an-access-point/all).
+- Lertsinsrubtavee, Adisorn, et al. “Understanding Internet Usage and Network Locality in a Rural Community Wireless Mesh Network.” Proceedings of the Asian Internet Engineering Conference, 18 Nov. 2015, [Link](https://doi.org/10.1145/2837030.2837033).
+- Parra, Raúl. “Conecta Selva, El Internet Satelital Amazónico, Lleva 98% De Avance En Perú.” DPL News, 22 June 2022, [Link](https://dplnews.com/conecta-selva-el-internet-satelital-amazonico-lleva-98-de-avance-en-peru/#:~:text=La%20iniciativa%20Conecta%20Selva%2C%20que,avance%20de%2098.5%20por%20ciento).
+- Pounder, Les. “How to Turn a Raspberry Pi into a Wi-Fi Access Point.” Tom’s Hardware, 10 Sept. 2022, [Link](https://www.tomshardware.com/how-to/raspberry-pi-access-point). Accessed 11 May 2023.
+- Rey-Moreno, Carlos, et al. “Making a Community Network Legal within the South African Regulatory Framework.” Proceedings of the Seventh International Conference on Information and Communication Technologies and Development, 15 May 2015, [Link](https://doi.org/10.1145/2737856.2737867).
+- “TakNet 1 : A Rural Community Wireless Mesh Network.” Community Wireless Mesh Networks | TakNet 1, [Link](https://interlab.ait.ac.th/cwmn/tak1.php).

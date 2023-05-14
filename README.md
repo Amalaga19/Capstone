@@ -36,7 +36,7 @@
 5. Click the “Write” button. Do not remove the MicroSD card from the computer until the imager shows a pop-up message that it is safe to do so.
 6. Insert the MicroSD card into the bottom of the Raspberry Pi board, connect an ethernet cable to its ethernet port and connect it to power using its MicroUSB port.
 ![SD Card and Raspberry Pi](https://github.com/Amalaga19/Capstone/blob/main/IMG_5552.JPEG?raw=true "SD Card with a RPi")
-![SD Card inside Raspberry Pi](https://github.com/Amalaga19/Capstone/blob/main/IMG_5552.JPEG?raw=true "SD Card inside a Pi")
+![SD Card inside Raspberry Pi](https://github.com/Amalaga19/Capstone/blob/main/IMG_5553.JPEG?raw=true "SD Card inside a Pi")
 8. Open a command prompt in your computer and make sure it is connected to the same network as the Raspberry Pi. I used Windows Powershell. Enter the following command and press enter, replacing the hostname and username placeholders with the ones you set when installing the OS to the MicroSD card:
 ```bash
 ssh user@hostname.local 

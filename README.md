@@ -1,10 +1,10 @@
 # Bridging the Digital Divide: Open-Source Access Point
 
-## The Project:
+## The Project
 
   This is a Wi-Fi access point that can be assembled and activated using open-source components and software. It runs on a Raspberry Pi 3B+ and is housed inside a 3-D printed casing, of which the design was modified to suit the functions of this device, and can be powered by a portable battery or any power source that can reliably provide a current of at least 2 Amperes. It also uses an SSD 1306 OLED display that can be programmed to display different kinds of messages and information from the device, and a USB Wi-Fi dongle in place of the built-in antenna. This device is connected to a network through an Ethernet cable and emits Wi-Fi through either its built-in antenna or the plugged-in dongle. Once this is assembled, further improvements can be made, such as adding more devices as repeaters or implementing a mesh network.
 
-## Why I am doing this:
+## Why I am doing this
 
   I am from Lima, Peru’s capital and largest city. Although in Lima internet connection and access is available and fairly priced, it is not the case in rural and remote areas like the highlands or rainforest regions. In these places, internet service providers (ISPs) have failed to provide a reliable and inexpensive connection, widening the digital divide. The digital divide is the unequal access to technology and connectivity between demographics or different groups of people, which in the case of Peru is evident and exacerbated by the unreliable internet infrastructure in remote areas. Since the “traditional” ISPs’ methods to bring internet connectivity have failed to provide a reliable and cost-effective service, other solutions are needed. In other countries in the Global South such as Thailand and South Africa community-led initiatives have been carried out to provide connectivity to their own communities. These initiatives are cost-effective, easy to install and maintain, sustainable, scalable and replicable, and while they often respond to a deficient internet infrastructure, the currently existent (deficient) infrastructure is sometimes leveraged as part of the initiative. In the case of Peru, the Ministry of Transport and Communications launched the “Conecta Selva” (Connect the Rainforest) program in 2021 with the aim of installing satellite internet connectivity in schools and hospitals in rural communities in the Peruvian Rainforest.
 
@@ -12,9 +12,9 @@
 
   Even though I wanted this device to be cost-effective, it also needed to be replicable and easy to install and maintain. To do this, it was clear that the project needed to use as much open-source technology as possible. This meant that using a Raspberry Pi, although much more expensive than a conventional wi-fi router or modem, was the logical choice due to the fact that it is mass-produced and can run a standard operating system (in this case Raspbian Bullseye). Raspberry Pi runs on Linux, an open-source operating system which also supports OpenWRT firmware, which has been used to program the embedded systems of several router and modem models. As an open-source firmware, the brands that use it need to publish them under a GPL license, making them available for programmers who would like to program their routers to perform different tasks. However, the firmware varies for each model, making it impossible to create a single manual and solution were this route chosen. Hence, a Raspberry Pi provided the perfect open-source alternative with very similar functionality, albeit sacrificing cost-effectiveness for the sake of replicability and ease to install and maintain, as Raspberry Pi has been extensively documented and has a large and active community of users, something individual routers may not have. This community of users will hopefully take this project and improve it or add to it, in hope that it achieves
 
-# Instructions:
+# Instructions
 
-## Equipement needed:
+## Equipement needed
 - A Raspberry Pi board (3B+ or newer)
 - An SSD 1306 OLED display like [this one](https://www.amazon.com/dp/B085WCRS7C?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 - Female-to-female jumper cables
@@ -24,7 +24,7 @@
 - An HDMI cable, a USB keyboard and a USB mouse. (Optional)
 - A 3-D printer and PLA filament (or access to a 3-D printing service)
 
-## Setting up the Raspberry Pi:
+## Setting up the Raspberry Pi
 1. Download and install the [Raspberry Pi imager](https://www.raspberrypi.com/software/)
 2. Insert a MicroSD card into a USB adapter and connect it to your computer.
 3. Select “Raspberry Pi OS (32-Bit)” after clicking the “Choose OS” button and select the MicroSD after clicking the “Choose Storage” button.
@@ -47,7 +47,7 @@ Copy code
 sudo apt-get update && sudo apt-get upgrade -y 
 ```
 Install the necessary drivers, packages and libraries:
-The following are required ():
+The following are required:
 ```bash
 sudo apt-get install python3-pip
 sudo pip3 install --upgrade setuptools
@@ -76,7 +76,7 @@ sudo shutdown -r now
 ```
 This will reboot the Raspberry Pi. After waiting 1-2 minutes, repeat steps 7 and 8.
 For the next part, an HDMI cable connected to a screen, a keyboard and a mouse are required. If this equipment is not available, this tutorial (link) may be followed to set the access point up from your computer. If you are using a wi-fi dongle, enter the command “ifconfig” and press enter, the dongle should show up as “WLAN1”, “WLAN0” is the Raspberry Pi’s built-in antenna. On any step that has a “WLAN0” in the code or as a file name, replace it with “WLAN1” to use the dongle’s antenna.
-## Setting up the access point:
+## Setting up the access point
 This section is adapted from this [tutorial](https://www.tomshardware.com/how-to/raspberry-pi-access-point) found in Tom’s Hardware
 1. Click on the network icon, it looks like two blue arrows: one pointing upwards and one pointing downwards. Click on advanced options -> Create Wireless Hotspot. If using a dongle, the option to do so using “WLAN1” should appear.
 2. Name the network and set up a password by changing the security to WPA & WPA2 Personal and click create. Open a command line and enter “sudo shutdown -r now” to reboot the Raspberry Pi.
@@ -190,7 +190,7 @@ find / -name "filename"
 3. Export the sliced file to a storage device and plug it into the 3-D printer. Follow the instructions on the 3-D printer’s screen.
 4. Once the printing process is complete, remove the product carefully from its tray and remove the supports. Usually these will be fragile enough to use your hands, but sometimes a set of pliers may be needed.
 
-## Assembling the device:
+## Assembling the device
 1. Place the Raspberry Pi board without the MicroSD card on the bottom part of the casing and place the MicroSD card in the Raspberry Pi through the slot found in the case.
 2. Connect the OLED display and align two screw holes on the display with two of the small, round holes in the casing’s top part.
 3. Secure the OLED display to the casing. I tied them together, but it can be done with screws or other methods. Be creative if it does not work with screws.
@@ -208,7 +208,7 @@ With the device on the school’s roof or window, several buildings nearby will 
 
 Since this device is using open-source technology, I believe that the user and maker community will be able to improve this device’s case and software to bring it closer to reaching its ultimate goal.
 
-## Sources:
+## Sources
 - Espinoza, David, and David Reed. “Wireless Technologies and Policies for Connecting Rural Areas in Emerging Countries: A Case Study in Rural Peru.” Digital Policy, Regulation and Governance, vol. 20, no. 5, 2018, pp. 479–511., [Link](https://doi.org/10.1108/dprg-03-2018-0009).
 - Fried, Limor (listed as “Lady Ada”). “Monochrome OLED Breakouts - Adafruit Industries.” Adafruit, 29 Jan. 2023, [Link](cdn-learn.adafruit.com/downloads/pdf/monochrome-oled-breakouts.pdf).
 - Innes, Brian. “Create a Mesh Network over WiFi Using Raspberry Pi.” GitHub, 29 Nov. 2021, [Link](https://github.com/binnes/WiFiMeshRaspberryPi/blob/master/README.md).

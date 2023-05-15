@@ -30,7 +30,7 @@
 
 ## Setting up the Raspberry Pi
 1. Download and install the [Raspberry Pi imager](https://www.raspberrypi.com/software/)
-2. Insert a card into a USB adapter and connect it to your computer.
+2. Insert a card into a USB adapter and connect it to your computer. The instructions in this document will assume a Windows computer is used.
 3. Select “Raspberry Pi OS (32-Bit)” after clicking the “Choose OS” button and select the MicroSD after clicking the “Choose Storage” button.
 4. Click on the settings button (it looks like a cog). Check the “Set Hostname” box and change the hostname, which is like the name of the device, and check “Enable SSH”, keep the “use password authentication” option checked and change the username and password. Take note of the hostname, username and password, and click the “Save” button.
 5. Click the “Write” button. Do not remove the MicroSD card from the computer until the imager shows a pop-up message that it is safe to do so.
@@ -49,7 +49,6 @@ sudo raspi-config
 Using the arrow keys, select “Localization Options” and “WLAN Country”, scroll down to the country you are currently located in and press enter. Navigate to the “Finish” button and press enter.
 Make sure the Operating System is running its latest version. To do so, enter the following command and press enter:
 ```bash
-Copy code
 sudo apt-get update && sudo apt-get upgrade -y 
 ```
 Install the necessary drivers, packages and libraries:
@@ -90,7 +89,7 @@ This section is adapted from this [tutorial](https://www.tomshardware.com/how-to
 4. Use your phone or another device and attempt to connect to your Raspberry Pi’s network. If the connection is successful, this second device should be able to access the internet. 
 
 ## Programming the OLED display
-This project used an SSD1306 OLED display. Adafruit provides this [guide](cdn-learn.adafruit.com/downloads/pdf/monochrome-oled-breakouts.pdf) to set up OLED displays which includes how to connect the different types of displays available in the market to the board. NOTE: The case model is designed for a 0.96" 128x64 OLED display and using other models of a different size will require modifying the case model.
+This project used an SSD1306 OLED display. Adafruit provides this [guide](cdn-learn.adafruit.com/downloads/pdf/monochrome-oled-breakouts.pdf) to set up OLED displays which includes how to connect the different types of displays available in the market to the board and example code to run it. These instructions are based on the guide. NOTE: The case model is designed for a 0.96" 128x64 OLED display and using other models of a different size will require modifying the case model.
 
 1. Connect the female-to-female jumper cables according to Adafruit’s instructions.
 2. Connect your computer to the Raspberry Pi by opening a powershell window and repeating steps 7 and 8 of the setup instructions or open a command prompt from the Raspberry Pi if it is connected to a screen and has a keyboard and mouse.
@@ -131,12 +130,9 @@ import digitalio
 import time
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_ssd1306
-
-# Define the Reset Pin
 oled_reset = digitalio.DigitalInOut(board.D4)
 
-# Change these
-# to the right size for your display!
+# The width and height should be set according to the width and height of the display used
 WIDTH = 128
 HEIGHT = 32  #
 # Use for I2C.
@@ -156,7 +152,7 @@ image = Image.new("1", (oled.width, oled.height))
 font = ImageFont.load_default()
 
 def display_text(text):
-    draw = ImageDraw.Draw(image)  # Move this line here
+    draw = ImageDraw.Draw(image)
     draw.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
     (font_width, font_height) = font.getsize(text)
     draw.text((oled.width // 2 - font_width // 2, oled.height // 2 - font_height // 2), text, font=font, fill=255)
@@ -164,15 +160,15 @@ def display_text(text):
     oled.show()
 
 while True:
-    # First alternating message
+    # First message
     display_text("SSID: The name of your network goes here")
     time.sleep(5)  # Display the SSID for 5 seconds
 
-    # Second alternating message
+    # Second message
     display_text("Password: Password goes here")
     time.sleep(5)  # Display the Password for 5 seconds
 ```
-  Press ctrl+x, y and then enter to save and close the file.
+  Press ctrl+x, "y" and then enter to save and close the file.
 6. Enter “Python” followed by a space and the filename of the file that was just closed. If the display was connected properly, then information should be shown on the display.
 7. To start the display’s program without having to use the command line or another computer, enter the following and press enter:
 ```bash
@@ -191,14 +187,14 @@ find / -name "filename"
 ## The case
   The STL file for the case can be downloaded [here](https://drive.google.com/file/d/1H-IyX1jAiXuQxYSuHUFYoUYDQk-Jr2FN/view?usp=sharing). It is a modified version of [this model](https://thangs.com/designer/MVLPGaming/3d-model/Customizable-Raspberry-Pi-3B-case-screwless-21595). If you have access to a 3-D printer use the relevant slicing software, if you are using a 3-D printing service contact them to follow their procedures. Regardless, download the file for the case so it can be printed or modified. The following instructions are only relevant for those who will be printing their own cases.
 
-1. Open your 3-D printer’s slicing software. In this case I used Ultimaker Cura and printed on an Ultimaker 3.
+1. Open the slicing software compatible with the 3-D printer you have access to and upload the STL file. In this case I used Ultimaker Cura and printed on an Ultimaker 3.
 2. Use the recommended settings and click “Slice”. I like to have more infill than the recommended, but using the recommended settings will suffice.
 3. Export the sliced file to a storage device and plug it into the 3-D printer. Follow the instructions on the 3-D printer’s screen.
 4. Once the printing process is complete, remove the product carefully from its tray and remove the supports. Usually these will be fragile enough to use your hands, but sometimes a set of pliers may be needed.
 ![A picture of the case before being assembled](https://github.com/Amalaga19/Capstone/blob/main/IMG_5545.JPEG?raw=true "Case before assembly")
 
 ## Assembling the device
-1. Place the Raspberry Pi board without the MicroSD card on the bottom part of the casing and place the MicroSD card in the Raspberry Pi through the slot found in the case.
+1. Place the Raspberry Pi board without the MicroSD card on the bottom part of the casing and place the MicroSD card in the Raspberry Pi through the slot found in the bottom part of the case.
 2. Connect the OLED display and align two screw holes on the display with two of the small, round holes in the casing’s top part.
 3. Secure the OLED display to the casing. I tied them together, but it can be done with screws or other methods. Be creative if it does not work with screws.
 4. Align the top and bottom parts of the case like so and snap them together. Push gently into the “stubborn” areas that are not snapped together yet.

@@ -226,3 +226,5 @@ Since this device is using open-source technology, I believe that the user and m
 - Pounder, Les. “How to Turn a Raspberry Pi into a Wi-Fi Access Point.” Tom’s Hardware, 10 Sept. 2022, [Link](https://www.tomshardware.com/how-to/raspberry-pi-access-point). Accessed 11 May 2023.
 - Rey-Moreno, Carlos, et al. “Making a Community Network Legal within the South African Regulatory Framework.” Proceedings of the Seventh International Conference on Information and Communication Technologies and Development, 15 May 2015, [Link](https://doi.org/10.1145/2737856.2737867).
 - “TakNet 1 : A Rural Community Wireless Mesh Network.” Community Wireless Mesh Networks | TakNet 1, [Link](https://interlab.ait.ac.th/cwmn/tak1.php).
+- “Customizable Raspberry Pi 3B+ Case (Screwless) - 3D Model by MVLPGaming on Thangs.” Thangs, 12 July 2021, [Link](thangs.com/designer/MVLPGaming/3d-model/Customizable%20Raspberry%20Pi%203B%2B%20case%20%28screwless%29-21595).
+
